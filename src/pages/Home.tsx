@@ -135,6 +135,57 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Location Section */}
+      <section className="py-20" style={{ backgroundColor: '#fef3f7' }}>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 animate-fade-up">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
+              Onde Estamos
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Venha nos visitar no coração de Porto Alegre
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto animate-fade-up stagger-1">
+            <div className="rounded-2xl overflow-hidden shadow-hover mb-6">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.0932847396824!2d-51.23013!3d-30.0368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951978567f17f28d%3A0x2c2c5272031e658!2sRua%20dos%20Andradas%2C%20Centro%20Hist%C3%B3rico%2C%20Porto%20Alegre%20-%20RS!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização da Clínica - Rua dos Andradas, Centro Histórico, Porto Alegre - RS"
+                aria-label="Mapa mostrando a localização da clínica no Centro Histórico de Porto Alegre"
+              />
+            </div>
+
+            <div className="text-center bg-white rounded-2xl p-8 shadow-soft">
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                <strong className="text-primary-foreground">Endereço:</strong> Rua dos Andradas<br />
+                Centro Histórico, Porto Alegre – RS
+              </p>
+              <Button
+                asChild
+                size="lg"
+                className="bg-secondary hover:bg-secondary-hover text-secondary-foreground rounded-full px-8"
+              >
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Rua+dos+Andradas,+Centro+Histórico,+Porto+Alegre+-+RS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir localização da clínica no Google Maps"
+                >
+                  Ver no Google Maps
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-primary">
         <div className="container mx-auto px-4 text-center animate-fade-up">
