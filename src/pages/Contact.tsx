@@ -111,9 +111,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-primary-foreground mb-1">Endereço</h3>
                       <p className="text-muted-foreground">
-                        Rua Exemplo, 123<br />
-                        São Paulo - SP<br />
-                        CEP: 01000-000
+                        Rua dos Andradas<br />
+                        Centro Histórico, Porto Alegre – RS
                       </p>
                     </div>
                   </div>
@@ -230,14 +229,15 @@ const Contact = () => {
             </h2>
             <div className="rounded-2xl overflow-hidden shadow-hover">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0977!2d-46.6542!3d-23.5629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQ2LjQiUyA0NsKwMzknMTUuMSJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.0932847396824!2d-51.23013!3d-30.0368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951978567f17f28d%3A0x2c2c5272031e658!2sRua%20dos%20Andradas%2C%20Centro%20Hist%C3%B3rico%2C%20Porto%20Alegre%20-%20RS!5e0!3m2!1spt-BR!2sbr!4v1234567890"
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Localização da Clínica de Estética"
+                title="Localização da Clínica - Rua dos Andradas, Centro Histórico, Porto Alegre - RS"
+                aria-label="Mapa mostrando a localização da clínica no Centro Histórico de Porto Alegre"
               />
             </div>
           </div>
