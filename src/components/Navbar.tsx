@@ -16,6 +16,18 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Controlar scroll do body quando menu mobile abre/fecha
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/servicos", label: "Serviços" },
@@ -63,35 +75,51 @@ const Navbar = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-foreground"
-            aria-label="Toggle menu"
+            aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Overlay Fullscreen */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3 animate-fade-up">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setIsOpen(false)}
-                className={`block py-2 text-sm font-medium transition-colors ${
-                  isActive(link.to) ? "text-primary-foreground" : "text-muted-foreground"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Button
-              asChild
-              className="w-full bg-primary hover:bg-primary-hover text-primary-foreground rounded-full"
+          <div 
+            className="fixed inset-0 bg-white/95 backdrop-blur-sm md:hidden z-[9999] animate-fade-in"
+            style={{ top: 0, left: 0, right: 0, bottom: 0 }}
+          >
+            {/* Botão Fechar fixo no canto superior direito */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="fixed top-6 right-4 text-foreground hover:text-primary transition-colors z-[10000]"
+              aria-label="Fechar menu"
             >
-              <Link to="/contato" onClick={() => setIsOpen(false)}>
-                Agende Agora
-              </Link>
-            </Button>
+              <X size={28} />
+            </button>
+
+            {/* Menu centralizado */}
+            <nav className="flex flex-col items-center justify-center h-full space-y-6 px-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setIsOpen(false)}
+                  className={`text-lg font-medium transition-all duration-300 hover:scale-105 ${
+                    isActive(link.to) ? "text-primary-foreground font-semibold" : "text-muted-foreground"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Button
+                asChild
+                className="w-64 bg-primary hover:bg-primary-hover text-primary-foreground rounded-full mt-4"
+              >
+                <Link to="/contato" onClick={() => setIsOpen(false)}>
+                  Agende Agora
+                </Link>
+              </Button>
+            </nav>
           </div>
         )}
       </nav>
