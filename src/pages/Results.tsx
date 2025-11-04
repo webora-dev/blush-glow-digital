@@ -1,45 +1,56 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import resultLimpezaBefore from "@/assets/result-limpeza-before.jpg";
+import resultLimpezaAfter from "@/assets/result-limpeza-after.jpg";
+import resultHidratacaoBefore from "@/assets/result-hidratacao-before.jpg";
+import resultHidratacaoAfter from "@/assets/result-hidratacao-after.jpg";
+import resultAntiageBefore from "@/assets/result-antiage-before.jpg";
+import resultAntiageAfter from "@/assets/result-antiage-after.jpg";
+import resultSkinboosterBefore from "@/assets/result-skinbooster-before.jpg";
+import resultSkinboosterAfter from "@/assets/result-skinbooster-after.jpg";
+import resultModeladoraBefore from "@/assets/result-modeladora-before.jpg";
+import resultModeladoraAfter from "@/assets/result-modeladora-after.jpg";
+import resultPeelingBefore from "@/assets/result-peeling-before.jpg";
+import resultPeelingAfter from "@/assets/result-peeling-after.jpg";
 
 const Results = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  // Placeholder images - in production, these would be real before/after photos
   const results = [
     {
       title: "Limpeza de Pele Profunda",
-      before: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=600&fit=crop",
-      after: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=600&fit=crop",
+      before: resultLimpezaBefore,
+      after: resultLimpezaAfter,
       description: "Resultado após 3 sessões de limpeza profunda",
     },
     {
       title: "Hidratação Facial",
-      before: "https://images.unsplash.com/photo-1612439216860-e177d8fff0c9?w=600&h=600&fit=crop",
-      after: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&h=600&fit=crop",
+      before: resultHidratacaoBefore,
+      after: resultHidratacaoAfter,
       description: "Pele visivelmente mais luminosa e hidratada",
     },
     {
       title: "Tratamento Anti-idade",
-      before: "https://images.unsplash.com/photo-1614030424754-24d0eebd46b2?w=600&h=600&fit=crop",
-      after: "https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=600&h=600&fit=crop",
+      before: resultAntiageBefore,
+      after: resultAntiageAfter,
       description: "Redução visível de linhas de expressão",
     },
     {
       title: "Skinbooster",
-      before: "https://images.unsplash.com/photo-1598662779094-110c2bad80b5?w=600&h=600&fit=crop",
-      after: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&h=600&fit=crop",
+      before: resultSkinboosterBefore,
+      after: resultSkinboosterAfter,
       description: "Resultado após bioestimulação com ácido hialurônico",
     },
     {
       title: "Massagem Modeladora",
-      before: "https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&h=600&fit=crop",
-      after: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&h=600&fit=crop",
+      before: resultModeladoraBefore,
+      after: resultModeladoraAfter,
       description: "Contorno corporal aprimorado",
     },
     {
       title: "Peeling Químico",
-      before: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=600&h=600&fit=crop",
-      after: "https://images.unsplash.com/photo-1592327115574-44d1b47c4b1d?w=600&h=600&fit=crop",
+      before: resultPeelingBefore,
+      after: resultPeelingAfter,
       description: "Renovação completa da textura da pele",
     },
   ];
